@@ -1,7 +1,16 @@
 # 🍎🥕 Fruits and Vegetables
 
+## Nikola's notes
+
+* Added the database container, so please run `docker-compose up --build -d` to spin it up.
+* `composer.json` was also updated
+* To load the `request.json` data, please run `/init` action in the browser, or post the payload to the same route, it accepts both for the convenience.
+* Due to timebox limitation, didn't add api/functional tests.
+
+-----------------------------------------------------------------------------------------
+
 ## 🎯 Goal
-We want to build a service which will take a `request.json` and:
+We want to build a service which will take a request.json and:
 * Process the file and create two separate collections for `Fruits` and `Vegetables`
 * Each collection has methods like `add()`, `remove()`, `list()`;
 * Units have to be stored as grams;
