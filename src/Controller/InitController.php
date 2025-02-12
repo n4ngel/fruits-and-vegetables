@@ -12,9 +12,9 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class InitController extends AbstractController
 {
-    #[Route('/init', name: 'app_init_index', methods: ['GET', 'POST'])]
-    public function index(Request $request, StorageService $storageService): JsonResponse
-    {
+	#[Route('/init', name: 'app_init_index', methods: ['GET', 'POST'])]
+	public function index(Request $request, StorageService $storageService): JsonResponse
+	{
 		if ($request->getMethod() === 'GET') {
 			$requestContent = file_get_contents($this->getParameter('kernel.project_dir') . '/request.json');
 		} else {
@@ -31,6 +31,6 @@ final class InitController extends AbstractController
 			return $this->json(['message' => $e->getMessage()], Response::HTTP_BAD_REQUEST);
 		}
 
-        return $this->json(['message' => 'Storage initialized successfully.'], Response::HTTP_OK);
-    }
+		return $this->json(['message' => 'Storage initialized successfully.'], Response::HTTP_OK);
+	}
 }

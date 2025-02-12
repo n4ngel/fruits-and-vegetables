@@ -46,11 +46,11 @@ final class ApiProduceController extends AbstractController
 	}
 
 	// @todo validate Produce incoming data vs Produce object validators
-	#[Route('/api/produce/{slug}/add', name: 'app_api_produce_add', methods: ['POST'])]
+	#[Route('/api/produce/{slug}', name: 'app_api_produce_add', methods: ['POST'])]
 	public function add(
-		ProduceBatch $produceBatch,
-		SerializerInterface $serializer,
-		EntityManagerInterface $entityManager,
+		ProduceBatch                                     $produceBatch,
+		SerializerInterface                              $serializer,
+		EntityManagerInterface                           $entityManager,
 		#[MapRequestPayload(type: Produce::class)] array $produce): JsonResponse
 	{
 		/**
